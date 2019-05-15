@@ -13,7 +13,7 @@ public class Game {
         RandomNumberPicker randomNumberPicker = new RandomNumberPickerImpl();
         ProbabilityPerformerImp performer = new ProbabilityPerformerImp(randomNumberPicker);
 
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 65; i++) {
             boolean result = performer.perform30PercentProbability();
             boolean result2 = performer.perform20PercentProbability();
             boolean result3 = performer.perform10PercentProbability();

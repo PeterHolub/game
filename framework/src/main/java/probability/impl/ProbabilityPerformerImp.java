@@ -6,7 +6,6 @@ import probability.RandomNumberPicker;
 import java.util.*;
 
 public class ProbabilityPerformerImp implements ProbabilityPerformer {
-
     private static final boolean WIN = true;
     private static final boolean LOSS = false;
     private static final int TEN_PERCENT_WINNING_RANGE = 1;
