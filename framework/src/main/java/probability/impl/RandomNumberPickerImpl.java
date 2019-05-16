@@ -2,29 +2,21 @@ package probability.impl;
 
 import probability.RandomNumberPicker;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.Random;
 
+/**
+ * Class implementation of RandomNumberPicker interface based on java Random class.
+ */
 public class RandomNumberPickerImpl implements RandomNumberPicker {
+    private Random random = new Random();
 
-    private static final int FIRST_NUMBER_AFTER_SHUFFLE = 0;
-
-    public Integer numberPick(List<Integer> numbers) {
-
-        Collections.shuffle(numbers);
-
-        Integer pickedNumber = numbers.get(FIRST_NUMBER_AFTER_SHUFFLE);
-
-        numbers.remove(pickedNumber);
-
-        if (numbers.size() == 0) {
-
-            numbers.addAll(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
-        } else {
-            Collections.shuffle(numbers);
-        }
-        return pickedNumber;
+    /**
+     * Method for generating random numbers
+     * @param bound range of numbers
+     * @return returns random number from numbers bound
+     */
+    public int numberPick(int bound) {
+        return random.nextInt(bound) + 1;
     }
 
 }
