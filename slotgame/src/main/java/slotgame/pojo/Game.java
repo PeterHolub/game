@@ -6,13 +6,21 @@ public class Game {
     private int wonFreeRounds = 0;
     private int spentCoins = 0;
     private int wonCoins = 0;
+    private int winsInFreeRound = 0;
+
+    public int getWinsInFreeRound() {
+        return winsInFreeRound;
+    }
+
+    public void setWinsInFreeRound() {
+        this.winsInFreeRound++;
+    }
 
     public int getBet() {
         return bet;
     }
 
     public void setBet() {
-        this.spentCoins = spentCoins + 10;
         this.bet++;
     }
 

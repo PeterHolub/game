@@ -49,6 +49,7 @@ public class SlotGameImpl implements SlotGame {
         game.setBet();
         if (winCoins) {
             game.setWinsAndWinCoins();
+            game.setWinsInFreeRound();
         }
         if (winFreeRound) {
             game.setWonFreeRounds();

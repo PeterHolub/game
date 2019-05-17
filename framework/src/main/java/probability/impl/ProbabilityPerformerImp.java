@@ -1,5 +1,6 @@
 package probability.impl;
 
+import probability.BoxPicker;
 import probability.ProbabilityPerformer;
 import probability.RandomNumberPicker;
 
@@ -10,6 +11,7 @@ public class ProbabilityPerformerImp implements ProbabilityPerformer {
     private static final boolean WIN = true;
     private static final boolean LOSS = false;
     private RandomNumberPicker randomNumberPicker;
+    private BoxPicker boxPicker;
 
     /**
      * Constructor for passing instance of RandomNumberPicker implementation
@@ -19,6 +21,12 @@ public class ProbabilityPerformerImp implements ProbabilityPerformer {
     public ProbabilityPerformerImp(RandomNumberPicker randomNumberPicker) {
         this.randomNumberPicker = randomNumberPicker;
     }
+
+    public ProbabilityPerformerImp(RandomNumberPicker randomNumberPicker, BoxPicker boxPicker) {
+        this.randomNumberPicker = randomNumberPicker;
+        this.boxPicker = boxPicker;
+    }
+
 
     /**
      * Method for performing percentage probability of winning.
@@ -33,6 +41,18 @@ public class ProbabilityPerformerImp implements ProbabilityPerformer {
         int pickedNumber = randomNumberPicker.numberPick(outcomes);
 
         if (pickedNumber > events) {
+            return LOSS;
+
+        } else {
+
+            return WIN;
+        }
+
+    }
+
+    public boolean performPercentProbabilityForBox(int events) {
+        int pickedNumberOfBox = boxPicker.boxPick();
+        if (pickedNumberOfBox == events) {
             return LOSS;
 
         } else {

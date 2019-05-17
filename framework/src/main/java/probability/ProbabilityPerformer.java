@@ -13,4 +13,6 @@ public interface ProbabilityPerformer {
      * @return boolean value representing true as win and false as loss
      */
     boolean performPercentProbability(int events, int outcomes);
+
+    boolean performPercentProbabilityForBox(int events);
 }
