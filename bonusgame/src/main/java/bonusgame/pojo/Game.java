@@ -7,7 +7,7 @@ public class Game {
     private int spentCoins = 0;
     private int wonBonusRounds = 0;
 
-    public int getBonusRoundss() {
+    public int getBonusRounds() {
         return wonBonusRounds;
     }
 
@@ -44,6 +44,6 @@ public class Game {
     }
 
     public void setSpentCoins() {
-        this.spentCoins++;
+        this.spentCoins = spentCoins + 10;
     }
 }

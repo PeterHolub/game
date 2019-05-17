@@ -1,3 +1,5 @@
+package slotgame;
+
 import probability.ProbabilityPerformer;
 import slotgame.impl.SlotGameImpl;
 import slotgame.pojo.Game;
@@ -14,16 +16,13 @@ public class SlotGameRunner {
         SlotGame slotGameImpl = new SlotGameImpl();
         RandomNumberPicker randomNumberPicker = new RandomNumberPickerImpl();
         ProbabilityPerformer performer = new ProbabilityPerformerImp(randomNumberPicker);
-        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Please enter a number of bets:");
-
-
+        Scanner scanner = new Scanner(System.in);
         int numberOfRounds = scanner.nextInt();
 
         while (game.getBet() < numberOfRounds) {
-
             slotGameImpl.playNormalRound(game, performer);
-
         }
 
         System.out.println("Bets: " + game.getBet());
@@ -32,5 +31,6 @@ public class SlotGameRunner {
         System.out.println("Amount of won coins: " + game.getWonCoins());
         System.out.println("Amount of spent coins: " + game.getSpentCoins());
         System.out.println("Wins in free round: " + game.getWinsInFreeRound());
+        System.out.println("RTP :" + (float)game.getWonCoins()/game.getSpentCoins());
     }
 }

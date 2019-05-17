@@ -4,6 +4,9 @@ import bonusgame.BonusGame;
 import bonusgame.pojo.Game;
 import probability.ProbabilityPerformer;
 
+/**
+ * Class implementation of BonusGame interface
+ */
 public class BonusGameImpl implements BonusGame {
     private static final boolean WIN = true;
     private static final boolean LOSS = false;
@@ -11,21 +14,34 @@ public class BonusGameImpl implements BonusGame {
     private static final int BONUS_ROUND_OUTCOMES = 10;
     private static final int FINISH_GAME_EVENTS = 1;
 
-    public boolean playBasicRound(Game game, ProbabilityPerformer performer) {
-        boolean gameContinue = true;
+    /**
+     * Method for playing basic round
+     *
+     * @param game      instance of Game object
+     * @param performer instance of ProbabilityPerformer to generate probability in game process
+     */
+    public void playBasicRound(Game game, ProbabilityPerformer performer) {
+        boolean bonusRoundAvailable = true;
         game.setBet();
         game.setSpentCoins();
+
         boolean bonusRound = performer.performPercentProbability(BONUS_ROUND_EVENTS, BONUS_ROUND_OUTCOMES);
 
 
         if (bonusRound) {
             game.setBonusRounds();
-            gameContinue = this.playBonusRound(game, performer);
+            while (bonusRoundAvailable) {
+                bonusRoundAvailable = this.playBonusRound(game, performer);
+            }
         }
-        return gameContinue;
-
     }
 
+    /**
+     * Method for playing bonus round
+     *
+     * @param game      instance of Game object
+     * @param performer instance of ProbabilityPerformer to generate probability in game process
+     */
     public boolean playBonusRound(Game game, ProbabilityPerformer performer) {
         boolean pickedBox = performer.performPercentProbabilityForBox(FINISH_GAME_EVENTS);
         if (pickedBox) {

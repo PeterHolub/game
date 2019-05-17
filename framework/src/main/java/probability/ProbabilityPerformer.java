@@ -13,6 +13,10 @@ public interface ProbabilityPerformer {
      * @return boolean value representing true as win and false as loss
      */
     boolean performPercentProbability(int events, int outcomes);
-
+    /**
+     * Method for performing probability of endgame box pick
+     * @param events   loss events
+     * @return boolean value representing true as win and false as loss
+     */
     boolean performPercentProbabilityForBox(int events);
 }

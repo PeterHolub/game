@@ -49,6 +49,11 @@ public class ProbabilityPerformerImp implements ProbabilityPerformer {
         }
 
     }
+    /**
+     * Method for performing probability of endgame box pick
+     * @param events   loss events
+     * @return boolean value representing true as win and false as loss
+     */
 
     public boolean performPercentProbabilityForBox(int events) {
         int pickedNumberOfBox = boxPicker.boxPick();

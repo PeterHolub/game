@@ -22,8 +22,14 @@ public class BoxPickerImpl implements BoxPicker {
     @Override
     public int boxPick() {
         Collections.shuffle(fiveBox);
-        Integer pickedBox= fiveBox.get(FIRST_NUMBER_AFTER_SHUFFLE);
+        Integer pickedBox = fiveBox.get(FIRST_NUMBER_AFTER_SHUFFLE);
         fiveBox.remove(pickedBox);
+
+        if (fiveBox.size() == 0) {
+
+            fiveBox.addAll(Arrays.asList(1, 2, 3, 4, 5));
+        }
+
         return pickedBox;
     }
 }
