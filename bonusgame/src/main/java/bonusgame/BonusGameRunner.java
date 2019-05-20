@@ -33,7 +33,7 @@ public class BonusGameRunner {
         System.out.println("Amount of won coins: " + game.getWonCoins());
         System.out.println("Amount of spent coins: " + game.getSpentCoins());
         System.out.println("Amount of bonus Rounds: " + game.getBonusRounds());
-        System.out.println("RTP :" + (float)game.getWonCoins()/game.getSpentCoins());
+        System.out.println("RTP :" + (float) game.getWonCoins() / game.getSpentCoins());
     }
 }
 

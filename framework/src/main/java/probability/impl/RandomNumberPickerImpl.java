@@ -12,6 +12,7 @@ public class RandomNumberPickerImpl implements RandomNumberPicker {
 
     /**
      * Method for generating random numbers
+     *
      * @param bound range of numbers
      * @return returns random number from numbers bound
      */

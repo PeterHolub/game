@@ -6,7 +6,6 @@ import slotgame.pojo.Game;
 import probability.RandomNumberPicker;
 import probability.impl.ProbabilityPerformerImp;
 import probability.impl.RandomNumberPickerImpl;
-import slotgame.SlotGame;
 
 import java.util.Scanner;
 
@@ -31,6 +30,6 @@ public class SlotGameRunner {
         System.out.println("Amount of won coins: " + game.getWonCoins());
         System.out.println("Amount of spent coins: " + game.getSpentCoins());
         System.out.println("Wins in free round: " + game.getWinsInFreeRound());
-        System.out.println("RTP :" + (float)game.getWonCoins()/game.getSpentCoins());
+        System.out.println("RTP :" + (float) game.getWonCoins() / game.getSpentCoins());
     }
 }
